@@ -11,19 +11,13 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopComponent } from './top/top.component';
-import { MemePopupComponent } from './meme-popup/meme-popup.component';
-
-import { MemeService } from './meme.service';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopComponent,
-	MemePopupComponent	   
   ],
   entryComponents:[
-	MemePopupComponent	   
 	],
   imports: [
     BrowserModule, 
@@ -31,12 +25,10 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpModule,
     HttpClientModule,
-    FormsModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    MemeService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
