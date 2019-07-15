@@ -11,6 +11,6 @@ export class MemeService {
   	constructor(public http: HttpClient) { }
 
 	public getMemes():Observable<any>{
-		return this.http.get(this.backendURL + 'meme/');
+		return this.http.get(this.backendURL + 'meme');
 	}
 }
