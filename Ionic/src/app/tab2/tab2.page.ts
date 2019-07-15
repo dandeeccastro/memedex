@@ -8,6 +8,7 @@ import { MemeService } from '../meme.service';
 })
 export class Tab2Page {
 
+	memes = [];
   constructor(public memeService: MemeService) {
   }
 
@@ -15,11 +16,14 @@ export class Tab2Page {
 		this.memeService.getMemes().subscribe(
 			(res) => {
 				console.log(res);
+				this.memes = res;
+				for (let meme of this.memes){
+						console.log(meme);
+				}
 			}
 		);
 	}
 		
   ngOnInit(){
-    this.getMemes();
   }
 }
