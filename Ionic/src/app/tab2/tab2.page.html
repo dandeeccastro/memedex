@@ -9,12 +9,12 @@
   <ion-grid>
     <ion-row>
       <span class="grid-name">Lista de Memes</span>
-			<ion-col *ngFor="let meme of memes"> 
+			<ion-col *ngFor="let meme of memes" size=4> 
 			    <ion-card>
 							<ion-title>{{meme.nome}}</ion-title>
 							<ion-text>{{meme.descricao}}</ion-text>
 							<ion-img src="{{meme.imagem}}"></ion-img>
-							<ion-progress-bar>{{meme.nivel}}</ion-progress-bar>
+							<ion-progress-bar value="{{meme.nivel/10}}"></ion-progress-bar>
 			    </ion-card>
 			</ion-col>
     </ion-row>
