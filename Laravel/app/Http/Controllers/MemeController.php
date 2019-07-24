@@ -38,26 +38,25 @@ class MemeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Meme  $meme
+     * @param  \App\Meme  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Meme $meme)
+    public function show($id)
     {
-		$resultado = Meme::findOrFail($meme);
-		return response()->json([$resultado]);
+		$meme = Meme::findOrFail($id);
+		return response()->json([$meme]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Meme  $meme
+     * @param  \App\Meme  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Meme $id)
+    public function update(Request $request, $id)
     {
-        $meme = Meme::findOrFail($id); 
-
+        $meme= Meme::findOrFail($id); 
 		if($request->nome)
 			$meme->nome = $request->nome;
 		if ($request->descricao)
@@ -73,12 +72,12 @@ class MemeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Meme  $meme
+     * @param  \App\Meme  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Meme $meme)
+    public function destroy($id)
     {
-		Meme::destroy($meme);
+		Meme::destroy($id);
 		return response()->json(['MEME REVIEW']);
     }
 }
